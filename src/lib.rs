@@ -578,10 +578,6 @@ fn earcut_linked_hashed<const PASS: usize, T: FloatCore + Debug + Default>(
         ));
         ll.remove_node(triangle.ear_idx());
         ear_ordering.remove_node(triangle.ear_idx());
-        /*ear_ordering.remove_node(triangle.prev_idx());
-        ear_ordering.remove_node(triangle.next_idx());
-        ear_ordering.add_node(ll, triangle.prev_idx());
-        ear_ordering.add_node(ll, triangle.next_idx());*/
 
         ear_ordering.replace_node(ll, triangle.prev_idx());
         ear_ordering.replace_node(ll, triangle.next_idx());
@@ -665,13 +661,9 @@ fn earcut_linked_unhashed<const PASS: usize, T: FloatCore + Debug + Default>(
         ));
         ll.remove_node(triangle.ear_idx());
         ear_ordering.remove_node(triangle.ear_idx());
-        ear_ordering.remove_node(triangle.prev_idx());
-        ear_ordering.remove_node(triangle.next_idx());
-        ear_ordering.add_node(ll, triangle.prev_idx());
-        ear_ordering.add_node(ll, triangle.next_idx());
 
-        /*ear_ordering.replace_node(ll, triangle.prev_idx());
-        ear_ordering.replace_node(ll, triangle.next_idx());*/
+        ear_ordering.replace_node(ll, triangle.prev_idx());
+        ear_ordering.replace_node(ll, triangle.next_idx());
     }
 
     if ear_ordering.done() {

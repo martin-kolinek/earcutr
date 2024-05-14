@@ -1,5 +1,8 @@
 # Earcutr
 
+This fork sorts removed ears by length of the cord of the ear. This creates nicer output, but
+is **much** slower.
+
 This is a port of the MapBox company's Earcut computer code, which triangulates polygons. 
 Please see https://github.com/mapbox/earcut for more information about the original 
 javascript code. This port is to the Rust computer language, and is single-threaded.
