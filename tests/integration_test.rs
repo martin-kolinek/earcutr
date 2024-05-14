@@ -213,7 +213,7 @@ fn test_water_huge() {
 
 #[test]
 fn test_water_huge2() {
-    assert!(area_test("water-huge2", 4461, 2.8e-3));
+    assert!(area_test("water-huge2", 4462, 2.8e-3));
 }
 
 #[test]

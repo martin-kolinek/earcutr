@@ -20,7 +20,7 @@ macro_rules! dlog {
 	)
 }
 
-fn cycles_report<T: num_traits::float::Float + std::fmt::Display>(ll: &LinkedLists<T>) -> String {
+fn cycles_report<T: num_traits::float::FloatCore + std::fmt::Display>(ll: &LinkedLists<T>) -> String {
     if ll.nodes.len() == 1 {
         return "[]".to_string();
     }
@@ -51,7 +51,7 @@ fn cycles_report<T: num_traits::float::Float + std::fmt::Display>(ll: &LinkedLis
 }
 
 #[allow(dead_code)]
-fn dump_cycle<T: num_traits::float::Float + std::fmt::Display>(
+fn dump_cycle<T: num_traits::float::FloatCore + std::fmt::Display>(
     ll: &LinkedLists<T>,
     start: usize,
 ) -> String {
@@ -101,7 +101,7 @@ fn dump_cycle<T: num_traits::float::Float + std::fmt::Display>(
     s
 }
 
-fn cycle_len<T: num_traits::float::Float + std::fmt::Display>(
+fn cycle_len<T: num_traits::float::FloatCore + std::fmt::Display>(
     ll: &LinkedLists<T>,
     p: LinkedListNodeIndex,
 ) -> usize {
@@ -140,7 +140,7 @@ fn horsh(mut h: u32, n: u32) -> u32 {
 
 // find the node with 'i' of starti, horsh it
 #[allow(dead_code)]
-fn horsh_ll<T: num_traits::float::Float + std::fmt::Display>(
+fn horsh_ll<T: num_traits::float::FloatCore + std::fmt::Display>(
     ll: &LinkedLists<T>,
     starti: VerticesIndex,
 ) -> String {

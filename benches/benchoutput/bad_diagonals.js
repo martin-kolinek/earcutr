@@ -1,1 +1,1 @@
-testOutput["bad_diagonals"]["benchmark"]=[0,21,[8, 9, 7, 7, 5, 6, 5, 10, 0, 2, 3, 4, 4, 5, 0, 1, 2, 4, 4, 0, 1]];
+testOutput["bad_diagonals"]["benchmark"]=[0,21,[7, 8, 9, 6, 7, 5, 5, 10, 0, 5, 0, 1, 4, 5, 1, 4, 1, 2, 4, 2, 3]];

@@ -1,10 +1,9 @@
-use num_traits::float::Float;
 use std::fmt::Display;
 
 use super::*;
 
 #[allow(dead_code)]
-pub fn dump<T: Float + Display>(ll: &LinkedLists<T>) -> String {
+pub fn dump<T: FloatCore + Display>(ll: &LinkedLists<T>) -> String {
     let mut s = format!("LL, #nodes: {}", ll.nodes.len());
     s.push_str(&format!(
         " #used: {}\n",
@@ -37,7 +36,7 @@ pub fn dump<T: Float + Display>(ll: &LinkedLists<T>) -> String {
 }
 
 #[allow(dead_code)]
-pub fn cycle_dump<T: Float + Display>(ll: &LinkedLists<T>, p: LinkedListNodeIndex) -> String {
+pub fn cycle_dump<T: FloatCore + Display>(ll: &LinkedLists<T>, p: LinkedListNodeIndex) -> String {
     let mut s = format!("cycle from {}, ", p);
     s.push_str(&format!(" len {}, idxs:", 0)); //cycle_len(&ll, p)));
     let mut i = p;
@@ -74,7 +73,7 @@ pub fn pb(a: bool) -> String {
 
 // turn a polygon in a multi-dimensional array form (e.g. as in GeoJSON)
 // into a form Earcut accepts
-pub fn flatten<T: Float + Display>(data: &Vec<Vec<Vec<T>>>) -> (Vec<T>, Vec<usize>, usize) {
+pub fn flatten<T: FloatCore + Display>(data: &Vec<Vec<Vec<T>>>) -> (Vec<T>, Vec<usize>, usize) {
     (
         data.iter().flatten().flatten().cloned().collect::<Vec<T>>(), // flat data
         data.iter()
@@ -90,7 +89,7 @@ pub fn flatten<T: Float + Display>(data: &Vec<Vec<Vec<T>>>) -> (Vec<T>, Vec<usiz
 
 // return a percentage difference between the polygon area and its
 // triangulation area; used to verify correctness of triangulation
-pub fn deviation<T: Float + Display>(
+pub fn deviation<T: FloatCore + Display>(
     vertices: &[T],
     hole_indices: &[usize],
     dims: usize,
